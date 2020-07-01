@@ -1,16 +1,23 @@
+// Dependencies
 import React, { useState } from 'react';
+// API
+import Airtable from 'airtable'
+// Styling
 import './App.css';
 
 function App() {
-
+  // State
   let [text, setText] = useState()
-
+  
+  // Air table API 
+  const base = new Airtable({apiKey: process.env.REACT_APP_APIKEY}).base(process.env.REACT_APP_BASEID)
+  
   const inputHandler = e => {
     setText(e.input)
   }
 
   const shareCurrent = () => {
-    
+
   }
 
 
