@@ -1,21 +1,40 @@
 // Dependencies
 import React, { useState } from 'react';
 // API
-import Airtable from 'airtable'
+// import Airtable from 'airtable'
+import { glyphs } from "./assets/ndebeGlyphs.json";
+
 // Styling
 import './App.css';
 
 function App() {
   // State
-  let [text, setText] = useState()
-  // let [display, setDisplay] = useState()
+  let [display, setDisplay] = useState([])
   // let [loading, setLoading] = useState(false)
   
   // Air table API 
-  const base = new Airtable({apiKey: 'process.env.REACT_APP_API_KEY'}).base('process.env.REACT_APP_BASE_ID')
+  // const base = new Airtable({apiKey: 'process.env.REACT_APP_API_KEY'}).base('process.env.REACT_APP_BASE_ID')
   
+  
+  // Image look up
+  const lookUp = word => {
+    if(word.length > 1){
+      for(let i = 0;i < word.length;i++){
+        console.log(word.substring(i, i + 1))
+        for(let j = i + 1;j < word.length;j++){
+          if(glyphs[word.substring(i, j)]){
+            setDisplay([...display, glyphs[word.substring(i, j)]])
+            console.log('add')
+          }
+        }
+      }
+    }
+  }
+
+  // Text input handler
   const inputHandler = e => {
-    setText(e.input)
+    setDisplay([])
+    lookUp(e.target.value)
   }
 
   // Post to twitter
@@ -45,6 +64,7 @@ function App() {
             <button onClick={shareCurrent} >Share Your Ndebe Text</button>
           </div>
           <div className='bottom'>
+
             <img src='./ndebeblackicon.png' alt='typed' />
           </div>
         </div>
