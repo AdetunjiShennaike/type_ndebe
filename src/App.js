@@ -8,19 +8,20 @@ import './App.css';
 function App() {
   // State
   let [text, setText] = useState()
+  // let [display, setDisplay] = useState()
+  // let [loading, setLoading] = useState(false)
   
   // Air table API 
-  const base = new Airtable({apiKey: process.env.REACT_APP_APIKEY}).base(process.env.REACT_APP_BASEID)
+  const base = new Airtable({apiKey: 'process.env.REACT_APP_API_KEY'}).base('process.env.REACT_APP_BASE_ID')
   
   const inputHandler = e => {
     setText(e.input)
   }
 
+  // Post to twitter
   const shareCurrent = () => {
-
+    window.location.href='https://twitter.com/intent/tweet?text=I%20wrote%20Igbo%20in%20Ndebe%20using%20https%3A%2F%2Fndebe.org%20for%20%23NdebeForIgbo&original_referer=https://typendebe.com'
   }
-
-
 
   return (
     <div className="App">
