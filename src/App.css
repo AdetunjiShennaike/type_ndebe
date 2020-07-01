@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  font-size: 1.6rem;
+}
+
+.App p {
+  font-size: 1.5rem;
+  line-height: .2rem;
+  letter-spacing: .5rem;
 }
 
 .App h2 {
@@ -28,7 +33,7 @@ header img {
 .leftside{
   display: flex;
   flex-direction: column;
-  background-color: darkgray;
+  background-color: black;
   width: 50%;
   height: 720px;
   color: aliceblue;
@@ -40,12 +45,14 @@ header img {
   line-height: .3rem;
 }
 
-.leftside p {
-  font-size: 1.5rem;
+.leftside img {
+  height: 1.4rem;
+  width: auto;
 }
 
 .leftside span {
   color: plum;
+  letter-spacing: 0;
 }
 
 
@@ -62,7 +69,21 @@ header img {
 }
 
 .top input {
-  width: 60%;
+  width: 70%;
   height: 2rem;
   margin-bottom: 2rem;
+}
+
+.top button {
+  background-color: rgb(22, 22, 22);
+  color: aliceblue;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  height: 2.5rem;
+  width: 30%;
+}
+
+.bottom {
+  margin-top: 1rem;
 }
